@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background: #07090f;
+    color: #f1f5f9;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-thumb { background: rgba(139,92,246,0.3); border-radius: 3px; }
+}
+
+@layer components {
+  .glass { @apply bg-bg-2/70 backdrop-blur-xl border border-white/[0.06] rounded-2xl; }
+  .glass-hover { @apply transition-all duration-300 hover:border-purple/30 hover:shadow-[0_0_25px_rgba(139,92,246,0.2)]; }
+  .btn-grad { @apply bg-grad-purple text-white font-semibold rounded-xl px-5 py-2.5 text-sm transition-all duration-200 hover:shadow-[0_6px_25px_rgba(139,92,246,0.45)] hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center gap-2; }
+  .btn-grad-green { @apply bg-grad-green text-white font-semibold rounded-xl px-5 py-2.5 text-sm transition-all duration-200 hover:shadow-[0_6px_25px_rgba(16,185,129,0.4)] hover:-translate-y-0.5 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none flex items-center justify-center gap-2; }
+  .btn-ghost { @apply bg-white/5 border border-white/10 text-slate-200 font-medium rounded-xl px-4 py-2 text-sm transition-all hover:bg-white/10 hover:border-white/15 flex items-center gap-2; }
+  .form-input-dark { @apply w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-3.5 py-2.5 text-sm text-slate-100 placeholder-slate-600 outline-none transition-all focus:border-purple/50 focus:shadow-[0_0_0_3px_rgba(139,92,246,0.12)] font-sans; }
+  .score-high { @apply bg-emerald-500/10 text-emerald-300 text-xs font-bold px-2.5 py-1 rounded-md font-mono; }
+  .score-mid  { @apply bg-amber-500/10  text-amber-300  text-xs font-bold px-2.5 py-1 rounded-md font-mono; }
+  .score-low  { @apply bg-red-500/10    text-red-300    text-xs font-bold px-2.5 py-1 rounded-md font-mono; }
+  .neon-border { box-shadow: 0 0 20px rgba(139,92,246,0.25), 0 0 40px rgba(99,102,241,0.1); }
+}
+
+@layer utilities {
+  .text-grad-purple { background: linear-gradient(135deg,#f1f5f9 30%,#c4b5fd 70%,#818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .text-grad-pink { background: linear-gradient(135deg,#818cf8,#c084fc,#e879f9); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .bg-grid { background-image: linear-gradient(rgba(139,92,246,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,0.03) 1px,transparent 1px); background-size: 60px 60px; }
+}
